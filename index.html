@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To do list</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="normalize.css" rel="stylesheet" type="text/css" />
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body>
+    <div class="world">
+      <div id="intro" class="intro">
+        <span class="bg"></span>
+        <div class="wrapper">
+          <h2 class="main-title">Job application The One</h2>
+
+          <form>
+            <p>Morpheus: so you would like to become The One?</p>
+            <label for="initialAnswer"
+              >Candidate:
+              <input
+                id="initialAnswer"
+                class="input"
+                name="initialAnswer"
+                type="text"
+                placeholder="Like yes"
+              />
+              <span class="error-message" id="error-message-1"
+                >You should enter YES or NO</span
+              >
+            </label>
+            <p>Morpheus: What is your name child?</p>
+            <label for="candidateName"
+              >Candidate:
+              <input
+                id="candidateName"
+                class="input"
+                name="candidateName"
+                type="text"
+                placeholder="Like Neo"
+              />
+              <span class="error-message" id="error-message-2"
+                >You should enter YES or NO</span
+              >
+            </label>
+            <p>You know we have the red and blue pills right?</p>
+            <p>
+              You have a choice between taking either a "red pill" that reveals
+              an unpleasant truth, or taking a "blue pill" to remain in blissful
+              ignorance.
+            </p>
+            <div class="pills">
+              <span>Take </span>
+              <button
+                id="pill_red"
+                onclick="pillRed()"
+                type="button"
+                class="pill pill-red"
+              >
+                Red pill
+              </button>
+              <button
+                id="pill_blue"
+                onclick="pillBlue()"
+                type="button"
+                class="pill pill-blue"
+              >
+                Blue pill
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="blissful_ignorance" class="blissful-ignorance">
+        <span class="bg"></span>
+        <h1 class="title">Go to sleep and pretend nothing happened.</h1>
+      </div>
+
+      <div id="the_matrix" class="the-matrix">
+        <canvas id="canvas" class="canvas"></canvas>
+        <h1 class="title">
+          <span id="person" class="person"></span> you are in the matrix know.
+        </h1>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="matrixjs.js"></script>
+  </body>
+</html>

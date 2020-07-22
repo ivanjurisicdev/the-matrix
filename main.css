@@ -1,0 +1,279 @@
+:root {
+  --basic-line-height: 1.5;
+  --font-size: 16px;
+  --small-font-size: 12px;
+  --transform-Y: translateY(-16px);
+
+  /* color */
+  --white: white;
+  --black: black;
+  --black--2: rgba(0, 0, 0, 0.5);
+  --red: red;
+
+  /* spacings */
+  --block-spacing: 50px;
+  --block-spacing-small: 25px;
+  --bottom-spacing: calc(16px * 3);
+  --spacing: 16px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  line-height: var(--basic-line-height);
+  font-size: var(--font-size);
+  color: var(--black);
+}
+
+.intro {
+  padding: var(--block-spacing-small);
+}
+
+.intro .wrapper {
+  z-index: 1;
+}
+
+.intro .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("the-room.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.intro .main-title {
+  text-align: center;
+  color: white;
+  margin-bottom: var(--block-spacing);
+  position: relative;
+  z-index: 1;
+}
+
+.intro p,
+.intro span {
+  color: white;
+}
+
+form {
+  position: relative;
+}
+
+label {
+  color: var(--white);
+  display: block;
+  margin-bottom: var(--spacing);
+  position: relative;
+}
+
+.input {
+  position: relative;
+  z-index: 1;
+}
+
+input::placeholder {
+  color: var(--black--2);
+  font-size: var(--small-font-size);
+}
+
+.error-message {
+  font-weight: 300;
+  font-size: var(--small-font-size);
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  color: var(--red) !important;
+}
+
+.pills {
+  display: flex;
+  align-items: center;
+}
+
+.pills span {
+  margin-right: 16px;
+}
+
+.pill {
+  transition: opacity 200ms;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  min-width: 100px;
+}
+
+.pill:hover {
+  opacity: 0.5;
+}
+
+.pill-red {
+  border-color: #42378f;
+  color: white;
+  margin-right: 16px;
+  background-color: #42378f;
+  background-image: linear-gradient(315deg, #42378f 0%, #f53844 74%);
+}
+
+.pill-blue {
+  border-color: #2a2a72;
+  color: white;
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
+.blissful-ignorance {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 200ms, visibility 200ms;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.blissful-ignorance .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("city.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.blissful-ignorance .title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  padding: var(--spacing);
+  margin: var(--spacing);
+  background-color: var(--black--2);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.the-matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 200ms, visibility 200ms;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.the-matrix .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: calc(16px * 3);
+  background-color: var(--black--2);
+  min-width: 300px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.the-matrix canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.the-matrix .person {
+  text-transform: capitalize;
+}
+
+.disappear {
+  transition-delay: 200ms;
+  transition: opacity 200ms, visibility 200ms;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.appear-opacity {
+  transition-delay: 200ms;
+  transition: opacity 200ms, visibility 200ms;
+  opacity: 1;
+  visibility: visible;
+}
+
+.appear-transform {
+  transition-delay: 200ms;
+  transition: opacity 200ms, visibility 200ms, transfrom 200ms;
+  opacity: 1;
+  visibility: visible;
+  transform: var(--transform-Y);
+}
+
+/* media min-width: 1200px */
+@media only screen and (min-width: 600px) {
+  .world {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .intro .main-title {
+    margin-bottom: var(--block-spacing);
+  }
+
+  .intro .wrapper {
+    max-width: 600px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+  }
+
+  form {
+    background-color: var(--black--2);
+    padding: var(--block-spacing);
+  }
+
+  .intro {
+    padding: var(--block-spacing);
+  }
+
+  .blissful-ignorance .title {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: calc(16px * 3);
+  }
+}
